@@ -1,4 +1,4 @@
-<SOFTPKG NAME="Data-Page-Pagination" VERSION="0.001">
+<SOFTPKG NAME="Data-Page-Pagination" VERSION="0.002">
     <ABSTRACT>Data::Page::Pagination - calculates the pagination view</ABSTRACT>
     <AUTHOR>Steffen Winkler &lt;steffenw at cpan.org&gt;</AUTHOR>
     <IMPLEMENTATION>
@@ -9,6 +9,6 @@
         <REQUIRE NAME="Syntax::Feature::Method" VERSION="0" />
         <REQUIRE NAME="syntax::" VERSION="0" />
         <REQUIRE NAME="Moose::" VERSION="0" />
-        <CODEBASE HREF="PPM-Data-Page-Pagination-0.001.tar.gz" />
+        <CODEBASE HREF="PPM-Data-Page-Pagination-0.002.tar.gz" />
     </IMPLEMENTATION>
 </SOFTPKG>
