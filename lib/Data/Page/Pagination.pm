@@ -6,7 +6,7 @@ use List::Util qw(min max);
 use namespace::autoclean;
 use syntax qw(method);
 
-our $VERSION = '0.001';
+our $VERSION = '0.002';
 
 subtype IntGreaterThan2 => (
     as 'Int',
@@ -143,7 +143,7 @@ Data::Page::Pagination - calculates the pagination view
 
 =head1 VERSION
 
-0.001
+0.002
 
 =head1 SYNOPSIS
 
