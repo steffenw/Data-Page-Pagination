@@ -8,7 +8,7 @@ use List::Util qw(min max);
 use namespace::autoclean;
 use syntax qw(method);
 
-our $VERSION = '0.005';
+our $VERSION = '0.006';
 
 subtype IntGreaterThan2 => (
     as Int,
@@ -99,13 +99,13 @@ has next_pages => (
 method visible_first_page {
     return
         $self->current_page == $self->first_page + 1
-        || @{ $self->previous_pages };
+        || !! @{ $self->previous_pages };
 }
 
 method visible_last_page {
     return
         $self->current_page == $self->last_page - 1
-        || @{ $self->next_pages };
+        || !! @{ $self->next_pages };
 }
 
 method visible_hidden_previous {
@@ -149,7 +149,7 @@ Data::Page::Pagination - calculates the pagination view
 
 =head1 VERSION
 
-0.005
+0.006
 
 =head1 SYNOPSIS
 
@@ -301,7 +301,7 @@ Steffen Winkler
 
 =head1 LICENSE AND COPYRIGHT
 
-Copyright (c) 2012,
+Copyright (c) 2012 - 2015,
 Steffen Winkler
 C<< <steffenw at cpan.org> >>.
 All rights reserved.

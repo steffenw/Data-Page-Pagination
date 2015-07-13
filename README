@@ -1,4 +1,4 @@
-Data::Page::Pagination version 0.005
+Data::Page::Pagination version 0.006
 ====================================
 
 This module calculates the pagination view using a Date::Page object.
@@ -12,13 +12,6 @@ To install this module, run the following commands:
     make
     make test
     make install
-
-Alternatively, to install with Module::Build, you can use the following commands:
-
-    perl Build.PL
-    ./Build
-    ./Build test
-    ./Build install
 
 DEPENDENCIES
 
@@ -35,7 +28,7 @@ This module requires these other modules and libraries:
 
 COPYRIGHT AND LICENCE
 
-Copyright (c) 2012,
+Copyright (c) 2012 - 2015,
 Steffen Winkler
 steffenw at cpan.org.
 All rights reserved.

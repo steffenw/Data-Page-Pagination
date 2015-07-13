@@ -29,7 +29,7 @@ my $dbh = DBI->connect(
 my $current_page = 2; # normally got from webserver request
 
 const my $ENTRIES_PER_PAGE => 2; # because I have less data
-const my $PAGE_NUMBERS     => 5; # visible left + current + right
+const my $PAGE_NUMBERS     => 5; # visible 2 left + 1 current + 2 right
 
 # total entries
 my $sth_count = $dbh->prepare(<<'EO_SQL');
@@ -85,10 +85,14 @@ $zoom = $zoom
         ],
     );
 
+# It's a little optimized
+# There are single page numbers.
 my @single_value = qw(
     previous_page first_page current_page last_page next_page
 );
+# There are lists of page numbers.
 my @multi_value  = qw(previous_pages next_pages);
+# There are switches of made them visible or not.
 my @bool_value   = qw(
     previous_page first_page hidden_previous
     hidden_next last_page next_page

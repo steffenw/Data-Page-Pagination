@@ -7,7 +7,7 @@ use Test::More;
 use Test::Differences;
 use Carp qw(croak);
 use Cwd qw(getcwd chdir);
-use English qw(-no_match_vars $INPUT_RECORD_SEPARATOR $OS_ERROR);
+use English qw(-no_match_vars $INPUT_RECORD_SEPARATOR $OS_ERROR $CHILD_ERROR);
 
 $ENV{TEST_EXAMPLE} or plan(
     skip_all => 'Set $ENV{TEST_EXAMPLE} to run this test.'
@@ -20,7 +20,9 @@ my $test = 'page.pl';
 my $dir = getcwd();
 chdir("$dir/example");
 
-my $result = qx{perl -I../lib $test 2>&3};
+my $result = qx{perl -I../lib $test 2>&1};
+$CHILD_ERROR
+    and die "Couldn't run $test (status $CHILD_ERROR)";
 eq_or_diff(
     $result,
     q{},
